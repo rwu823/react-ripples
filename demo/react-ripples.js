@@ -8362,8 +8362,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  position: 'absolute',
 	  borderRadius: '50%',
 	  opacity: 0,
-	  width: 20,
-	  height: 20,
+	  width: 35,
+	  height: 35,
 	  transform: 'translate(-50%, -50%)',
 	  pointerEvents: 'none'
 	};
@@ -8470,7 +8470,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	Ripples.defaultProps = {
 	  during: 600,
-	  color: 'rgba(255, 255, 255, .5)'
+	  color: 'rgba(0, 0, 0, .3)'
 	};
 
 
