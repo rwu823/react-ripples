@@ -8419,13 +8419,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 
 	      setTimeout(function () {
-	        var size = Math.max(offsetWidth, offsetHeight) * 3;
+	        var size = Math.max(offsetWidth, offsetHeight);
 
 	        _this.setState({
 	          rippleStyle: {
-	            width: size,
-	            height: size,
-	            left: 0, top: 0,
+	            left: left, top: top,
+	            transform: rippleStyle.transform + ' scale(' + size / 9 + ')',
 	            opacity: 0,
 	            transition: 'all ' + during + 'ms'
 	          }
