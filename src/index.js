@@ -51,13 +51,12 @@ class Ripples extends React.Component {
     })
 
     setTimeout(()=> {
-      const size = Math.max(offsetWidth, offsetHeight) * 3
+      const size = Math.max(offsetWidth, offsetHeight)
 
       this.setState({
         rippleStyle: {
-          width: size,
-          height: size,
-          left: 0, top: 0,
+          left, top,
+          transform: `${rippleStyle.transform} scale(${size/9})`,
           opacity: 0,
           transition: `all ${during}ms`,
         }
