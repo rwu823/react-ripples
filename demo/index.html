@@ -13,7 +13,7 @@
     color: #555;
   }
   header {
-    background: linear-gradient(to right, #2c9fc4, #00b9a2) ;
+    background: linear-gradient(to right, rgb(192,162,248), rgb(110, 184, 251));
     color: #fff;
     display: flex;
     height: 220px;
@@ -21,6 +21,18 @@
     font-size: 20px;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+  }
+  header:after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    top: -20%;
+    left: 50%;
+    pointer-events: none;
   }
   header a {
     display: inline-block;
