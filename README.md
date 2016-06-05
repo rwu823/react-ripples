@@ -23,7 +23,7 @@ import Ripples from 'react-ripples'
   
 render() {
   <div>
-	<Ripples>
+    <Ripples>
       <button>Hello</button>
     </Ripples>
   </div>
@@ -44,7 +44,7 @@ static propTypes = {
 
 static defaultProps = {
   during: 600,
-  color: 'rgba(255, 255, 255, .5)',
+  color: 'rgba(0, 0, 0, .3)',
 }
 ```
 
