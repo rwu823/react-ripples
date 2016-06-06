@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const pkg = require('./package.json')
 
 const webpackEnv = process.env.WEBPACK
 const isDemo = webpackEnv === 'demo'
@@ -35,6 +36,11 @@ module.exports = {
     } : {}
   },
   externals: isProd ? {
+    ...Object.keys(pkg.dependencies).reduce((o, dep)=> {
+      o[dep] = true
+      return o
+    }, {}),
+    
     react: {
       root: 'React',
       commonjs: 'React',
