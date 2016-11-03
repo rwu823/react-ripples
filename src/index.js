@@ -77,6 +77,8 @@ class Ripples extends React.Component {
       ...wrapStyle,
       ...state.wrapStyle,
     }
+      
+    delete props.during
 
     return (
       <div {...props} style={s} onClick={this.handleClick}>
