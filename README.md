@@ -11,7 +11,7 @@ $ npm install --save react-ripples
 
 ## Demo
 
-[live demo](https://rwu823.github.io/react-ripples/demo)
+[live demo](https://rwu823.github.io/react-ripples)
 
 
 
