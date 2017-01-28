@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 
 const rippleStyle = {
   position: 'absolute',
@@ -29,15 +29,18 @@ class Ripples extends React.Component {
 
   state = {
     rippleStyle: {},
-    wrapStyle: {}
   }
 
   handleClick = (ev) => {
     ev.stopPropagation()
 
-    const {onClick, color, during} = this.props
-    const {pageX, pageY, currentTarget: {offsetLeft, offsetTop,
-      offsetWidth, offsetHeight}} = ev
+    const { onClick, color, during } = this.props
+    const {
+      pageX, pageY, currentTarget: {
+        offsetLeft, offsetTop,
+        offsetWidth, offsetHeight
+      }
+    } = ev
 
     const left = pageX - offsetLeft
     const top = pageY - offsetTop
@@ -50,13 +53,13 @@ class Ripples extends React.Component {
       }
     })
 
-    setTimeout(()=> {
+    setTimeout(() => {
       const size = Math.max(offsetWidth, offsetHeight)
 
       this.setState({
         rippleStyle: {
           left, top,
-          transform: `${rippleStyle.transform} scale(${size/9})`,
+          transform: `${rippleStyle.transform} scale(${size / 9})`,
           opacity: 0,
           transition: `all ${during}ms`,
         }
@@ -67,21 +70,19 @@ class Ripples extends React.Component {
       onClick(ev)
     }
   }
-  
-  render() {
-    const {children, style, color, ...props} = this.props
-    const {state} = this
 
-    let s = {
+  render() {
+    const { children, style, during, ...props } = this.props
+    const { state, handleClick } = this
+
+    const s = {
       ...style,
       ...wrapStyle,
-      ...state.wrapStyle,
     }
 
     return (
-      <div {...props} style={s} onClick={this.handleClick}>
-        {children}
-
+      <div {...props} style={s} onClick={handleClick}>
+        { children }
         <s style={{
           ...rippleStyle,
           ...state.rippleStyle,
