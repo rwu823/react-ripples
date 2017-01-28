@@ -92,4 +92,4 @@ class Ripples extends React.Component {
   }
 }
 
-module.exports = Ripples
+export default Ripples

@@ -16,12 +16,12 @@ rollup.rollup({
   external: ['react'],
   plugins: [
     babel(),
-    commomjs(),
   ],
 })
 .then((bundle) => {
   bundle.write({
     format: 'umd',
+    moduleName: 'ReactRipples',
     dest: `npm/${pkg.main}`,
     globals: {
       'react': 'React',
