@@ -1,18 +1,20 @@
 {
   "presets": [
-    "es2015",
-    "stage-0",
-    "react"
-  ],
-  "plugins": [
-    "transform-strict-mode"
+    ["env", {
+      "modules": false
+    }],
+    "stage-2",
+    "react",
   ],
   "env": {
-    "production": {
-      "plugins": [
-        "transform-react-constant-elements",
-        "transform-react-inline-elements"
+    "test": {
+      "presets": [
+        "env",
+        "stage-2",
+        "react"
       ]
     }
-  }
+  },
+  "plugins": [
+  ]
 }
