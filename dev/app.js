@@ -1,6 +1,5 @@
 import React, {} from 'react'
-const {render} = require('react-dom')
-const Ripples = require('../src')
+import Ripples from '../src'
 
 class App extends React.Component {
   static propTypes = {}
@@ -69,4 +68,4 @@ class App extends React.Component {
   }
 }
 
-render(<App />, document.querySelector('#app'))
+module.exports = App
