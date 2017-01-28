@@ -1,6 +1,5 @@
-[![version](https://img.shields.io/npm/v/react-ripples.svg?label=version)](https://www.npmjs.org/package/react-ripples) [![Build Status](https://img.shields.io/travis/rwu823/react-ripples.svg)](https://travis-ci.org/rwu823/react-ripples) [![Coverage](https://img.shields.io/coveralls/rwu823/react-ripples.svg)](https://coveralls.io/github/rwu823/react-ripples)
+[![version](https://img.shields.io/npm/v/react-ripples.svg?label=version)](https://www.npmjs.org/package/react-ripples) [![Build Status](https://img.shields.io/travis/rwu823/react-ripples.svg)](https://travis-ci.org/rwu823/react-ripples) [![codecov](https://img.shields.io/codecov/c/github/rwu823/react-ripples.svg)](https://codecov.io/github/rwu823/react-ripples)
 # react-ripples
-
 
 ## Install
 

@@ -58,10 +58,11 @@ class Ripples extends React.Component {
 
       this.setState({
         rippleStyle: {
-          left, top,
+          top, left,
+          backgroundColor: color,
+          transition: `all ${during}ms`,
           transform: `${rippleStyle.transform} scale(${size / 9})`,
           opacity: 0,
-          transition: `all ${during}ms`,
         }
       })
     }, 50)
@@ -92,4 +93,4 @@ class Ripples extends React.Component {
   }
 }
 
-module.exports = Ripples
+export default Ripples
