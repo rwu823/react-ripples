@@ -1,18 +1,19 @@
-import test from 'ava'
 import Ripples from '../src'
 import React from 'react'
-import {shallow, mount} from 'enzyme'
+import { shallow, mount } from 'enzyme'
 
-test('should extend className', assert => {
-  const $ = shallow(<Ripples className="xyz" />)
+it('should extend className', () => {
+  const $ = shallow(<Ripples className="xyz"/>)
 
-  assert.is($.hasClass('xyz'), true)
+  expect($.hasClass('xyz')).toBe(true)
 })
 
-test('should extend onClick', assert => {
-  const $ = mount(<Ripples onClick={e => (123)} >
-    <span>Click me</span>
-  </Ripples>)
+it('should extend onClick', () => {
+  const $ = mount(
+    <Ripples onClick={e => (123)}>
+      <span>Click me</span>
+    </Ripples>
+  )
 
   $.simulate('click')
 })
