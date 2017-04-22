@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React, { PureComponent } from 'react'
+import PropTypes, { bool, string, array, number, object, func } from 'prop-types'
 
 const rippleStyle = {
   position: 'absolute',
@@ -16,7 +17,7 @@ const wrapStyle = {
   overflow: 'hidden',
 }
 
-class Ripples extends React.Component {
+class Ripples extends PureComponent {
   static propTypes = {
     during: PropTypes.number,
     color: PropTypes.string,
@@ -32,7 +33,9 @@ class Ripples extends React.Component {
   }
 
   handleClick = (ev) => {
-    ev.stopPropagation()
+    if (ev.stopPropagation) {
+      ev.stopPropagation()
+    }
 
     const { onClick, color, during } = this.props
     const {
@@ -73,7 +76,7 @@ class Ripples extends React.Component {
   }
 
   render() {
-    const { children, style, during, ...props } = this.props
+    const { children, style, during, color, ...props } = this.props
     const { state, handleClick } = this
 
     const s = {
