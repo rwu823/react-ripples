@@ -1,29 +1,31 @@
-import Ripples from '../'
 import React from 'react'
+import Ripples from '../'
 import { shallow, mount } from 'enzyme'
 
-it('should extend className', () => {
-  const $ = shallow(<Ripples className="xyz"/>)
+describe('<Ripple />', () => {
+  it('should extend className', () => {
+    const $ = shallow(<Ripples className="xyz"/>)
 
-  expect($.hasClass('xyz')).toBe(true)
-})
-
-it('should extend onClick', async() => {
-  const $ = mount(
-    <Ripples onClick={() => {
-
-    }}>
-      <span>Click me</span>
-    </Ripples>
-  )
-
-  $.simulate('click')
-
-  const rippleStyle = await new Promise((done) => {
-    setTimeout(() => {
-      done($.state('rippleStyle'))
-    }, 100)
+    expect($.hasClass('xyz')).toBe(true)
   })
 
-  expect(rippleStyle.transition).toBeTruthy()
+  it('should extend onClick', async() => {
+    const $ = mount(
+      <Ripples onClick={() => {
+
+      }}>
+        <span>Click me</span>
+      </Ripples>
+    )
+
+    $.simulate('click')
+
+    const rippleStyle = await new Promise((done) => {
+      setTimeout(() => {
+        done($.state('rippleStyle'))
+      }, 100)
+    })
+
+    expect(rippleStyle.transition).toBeTruthy()
+  })
 })
