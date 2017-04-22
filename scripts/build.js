@@ -2,8 +2,6 @@ require('shelljs/global')
 const rollup = require('rollup')
 const babel = require('rollup-plugin-babel')
 const pkg = require('../package.json')
-const commomjs = require('rollup-plugin-commonjs')
-
 const gu = require('gulp')
 const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
@@ -13,7 +11,7 @@ rm('-rf', ['npm'])
 
 rollup.rollup({
   entry: 'src/index.js',
-  external: ['react'],
+  external: Object.keys(pkg.dependencies),
   plugins: [
     babel(),
   ],
