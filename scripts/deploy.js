@@ -14,8 +14,8 @@ if (TRAVIS_MATRIX === 'test') {
 }
 
 if (TRAVIS_BRANCH === 'master') {
-  exec(`git config --global user.email "auto_deploy@circleci.com"`)
-  exec(`git config --global user.name "CircleCI"`)
+  exec(`git config --global user.email "auto_deploy@travis-ci.org"`)
+  exec(`git config --global user.name "TravisCI"`)
 
   // Add GH Tag
   exec(`git tag ${tag}`)
@@ -33,10 +33,8 @@ if (TRAVIS_BRANCH === 'master') {
     // Publish to gh-pages
     cd('gh-pages')
     exec('git init')
-    exec(`git remote add origin ${tokenRepo}`)
     exec('git add .')
-    exec(`git checkout -b gh-pages`)
     exec(`git commit -anm '${version}'`)
-    exec(`git push origin gh-pages -f`)
+    exec(`git push ${tokenRepo} master:gh-pages -f`)
   }
 }
