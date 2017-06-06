@@ -83,6 +83,8 @@ class Ripples extends PureComponent {
       ...style,
       ...wrapStyle,
     }
+      
+    delete props.during
 
     return (
       <div {...props} style={s} onClick={handleClick}>
