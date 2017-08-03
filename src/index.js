@@ -32,6 +32,10 @@ class Ripples extends PureComponent {
     rippleStyle: {},
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.state.timeoutId);
+  }
+
   handleClick = (ev) => {
     if (ev.stopPropagation) {
       ev.stopPropagation()
@@ -56,7 +60,7 @@ class Ripples extends PureComponent {
       }
     })
 
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       const size = Math.max(offsetWidth, offsetHeight)
 
       this.setState({
@@ -69,6 +73,8 @@ class Ripples extends PureComponent {
         }
       })
     }, 50)
+
+    this.setState({ timeoutId });
 
     if (typeof onClick === 'function') {
       onClick(ev)
