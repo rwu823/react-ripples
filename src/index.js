@@ -33,7 +33,7 @@ class Ripples extends PureComponent {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.state.timeoutId);
+    clearTimeout(this.timeoutId);
   }
 
   handleClick = (ev) => {
@@ -74,7 +74,7 @@ class Ripples extends PureComponent {
       })
     }, 50)
 
-    this.setState({ timeoutId });
+    this.timeoutId = timeoutId;
 
     if (typeof onClick === 'function') {
       onClick(ev)
