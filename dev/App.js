@@ -48,7 +48,7 @@ class App extends React.Component {
           </Ripples>
         </div>
 
-        <h2>Change <span className="code">color</span> and <span className="code">duration</span></h2>
+        <h2>Change <span className="code">color</span> and <span className="code">during</span></h2>
         <p></p>
         <div className="btn-wrap">
           <Ripples color="#337AB7" during={2000}>
