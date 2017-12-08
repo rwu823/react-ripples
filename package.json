@@ -1,12 +1,13 @@
 {
   "name": "react-ripples",
   "version": "0.4.0",
-  "description": "The ripple effect everything",
+  "description": "The ripple effect. Ripples everything",
   "main": "dist/react-ripples.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
-    "build": "NODE_ENV=production node scripts/build",
-    "build.demo": "NODE_ENV=demo webpack --progress",
+    "dev": "NODE_ENV=development parcel dev/index.html --out-dir out",
+    "build": "NODE_ENV=production npm-run-all --parallel build:*",
+    "build:page": "rm -rf gh-pages && parcel build dev/index.html --no-minify --out-dir gh-pages --public-url ./",
+    "build:lib": "rm -rf out && node scripts/build",
     "test": "jest --coverage"
   },
   "keywords": [
@@ -14,34 +15,38 @@
     "ripple",
     "ripples",
     "effect",
-    "button"
+    "button",
+    "material"
   ],
-  "author": "Rocky Wu <rocky823@gmail.com>",
+  "author": "Rocky Wu <rwu823@gmail.com>",
   "license": "MIT",
+  "jest": {
+    "setupTestFrameworkScriptFile": "./scripts/jest-setup.js",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "./scripts/jest-setup"
+    ]
+  },
   "devDependencies": {
-    "babel-loader": "^7.0.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "enzyme": "^2.8.2",
+    "babel-preset-react-app": "^3.1.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-size": "^2.1.0",
-    "gulp-uglify": "^2.1.2",
-    "html-webpack-plugin": "^2.28.0",
-    "jest-cli": "^19.0.2",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
-    "rollup": "^0.41.6",
-    "rollup-plugin-babel": "^2.7.1",
-    "shelljs": "^0.7.7",
-    "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "gulp-uglify": "^3.0.0",
+    "jest": "^21.2.1",
+    "npm-run-all": "^4.1.2",
+    "parcel-bundler": "^1.0.3",
+    "pump": "^2.0.0",
+    "react-dom": "^16.2.0",
+    "rollup": "^0.52.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "shelljs": "^0.7.8"
   },
   "dependencies": {
-    "prop-types": "^15.5.8",
-    "react": "^15.5.4"
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0"
   },
   "repository": "https://github.com/rwu823/react-ripples.git"
 }

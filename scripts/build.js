@@ -1,46 +1,46 @@
-require('shelljs/global')
 const rollup = require('rollup')
 const babel = require('rollup-plugin-babel')
-const pkg = require('../package.json')
+
+const pump = require('pump')
 const gu = require('gulp')
 const rename = require('gulp-rename')
 const uglify = require('gulp-uglify')
 const size = require('gulp-size')
 
-rm('-rf', ['npm'])
+const pkg = require('../package.json')
 
 rollup.rollup({
-  entry: 'src/index.js',
+  input: 'src/index.js',
   external: Object.keys(pkg.dependencies),
   plugins: [
-    babel(),
+    babel()
   ],
-})
-.then((bundle) => {
-  bundle.write({
-    format: 'umd',
-    moduleName: 'ReactRipples',
-    dest: `npm/${pkg.main}`,
-    globals: {
-      'react': 'React',
-    }
-  })
-})
+}).then((bundle) => bundle.write({
+  format: 'umd',
+  name: 'ReactRipples',
+  file: `out/${pkg.main}`,
+  globals: {
+    'react': 'React',
+    'prop-types': 'PropTypes',
+  }
+}))
 .then(() => {
-  gu.src('package.json')
-    .pipe(gu.dest('npm'))
+  pump([
+    gu.src('package.json'),
+    gu.dest('out'),
 
-  gu.src('npm/dist/*.js')
-    .pipe(uglify())
-    .pipe(rename({
+    gu.src('out/dist/*.js'),
+    uglify(),
+    rename({
       suffix: '.min'
-    }))
-    .pipe(gu.dest('npm/dist'))
-    .on('finish', () => {
-      gu.src('npm/**')
-        .pipe(size({
-          showFiles: true,
-          prettySize: true,
-        }))
+    }),
+    gu.dest('out/dist')
+  ], () => pump([
+    gu.src('out/**'),
+    size({
+      showFiles: true,
+      pretty: true,
+      gzip: true,
     })
+  ]))
 })

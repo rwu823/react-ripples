@@ -1,17 +1,7 @@
 import React, { PureComponent } from 'react'
-import PropTypes, { bool, string, array, number, object, func } from 'prop-types'
+import PropTypes from 'prop-types'
 
-const rippleStyle = {
-  position: 'absolute',
-  borderRadius: '50%',
-  opacity: 0,
-  width: 35,
-  height: 35,
-  transform: 'translate(-50%, -50%)',
-  pointerEvents: 'none',
-}
-
-const wrapStyle = {
+const wrapStyleDefault = {
   position: 'relative',
   display: 'inline-block',
   overflow: 'hidden',
@@ -28,8 +18,21 @@ class Ripples extends PureComponent {
     color: 'rgba(0, 0, 0, .3)',
   }
 
-  state = {
-    rippleStyle: {},
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      rippleStyle: {
+        position: 'absolute',
+        borderRadius: '50%',
+        opacity: 0,
+        width: 35,
+        height: 35,
+        transform: 'translate(-50%, -50%)',
+        pointerEvents: 'none',
+        backgroundColor: props.color,
+      },
+    }
   }
 
   handleClick = (ev) => {
@@ -47,28 +50,29 @@ class Ripples extends PureComponent {
 
     const left = pageX - offsetLeft
     const top = pageY - offsetTop
+    const size = Math.max(offsetWidth, offsetHeight)
 
     this.setState({
       rippleStyle: {
-        top, left,
+        ...this.state.rippleStyle,
+        top,
+        left,
         opacity: 1,
-        backgroundColor: color,
-      }
+        transform: 'translate(-50%, -50%)',
+        transition: 'initial',
+      },
     })
 
     setTimeout(() => {
-      const size = Math.max(offsetWidth, offsetHeight)
-
       this.setState({
         rippleStyle: {
-          top, left,
-          backgroundColor: color,
-          transition: `all ${during}ms`,
-          transform: `${rippleStyle.transform} scale(${size / 9})`,
+          ...this.state.rippleStyle,
           opacity: 0,
-        }
+          transform: `scale(${size / 9})`,
+          transition: `all ${during}ms`,
+        },
       })
-    }, 50)
+    })
 
     if (typeof onClick === 'function') {
       onClick(ev)
@@ -79,18 +83,15 @@ class Ripples extends PureComponent {
     const { children, style, during, color, ...props } = this.props
     const { state, handleClick } = this
 
-    const s = {
+    const wrapStyle = {
       ...style,
-      ...wrapStyle,
+      ...wrapStyleDefault,
     }
 
     return (
-      <div {...props} style={s} onClick={handleClick}>
+      <div {...props} style={wrapStyle} onClick={handleClick}>
         { children }
-        <s style={{
-          ...rippleStyle,
-          ...state.rippleStyle,
-        }} />
+        <s style={state.rippleStyle} />
       </div>
     )
   }

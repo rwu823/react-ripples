@@ -7,28 +7,22 @@
 $ npm install --save react-ripples
 ```
 
-
-
 ## Demo
 
 [live demo](https://rwu823.github.io/react-ripples)
-
 
 
 ## Usage
 
 ```javascript
 import Ripples from 'react-ripples'
-  
+
 render() {
-  <div>
-    <Ripples>
-      <button>Hello</button>
-    </Ripples>
-  </div>
+  <Ripples>
+    <button>Hello</button>
+  </Ripples>
 }
 ```
-
 
 
 ## API

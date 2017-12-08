@@ -1,6 +1,7 @@
 import React from 'react'
-import Ripples from '../'
 import { shallow, mount } from 'enzyme'
+
+import Ripples from '../'
 
 describe('<Ripple />', () => {
   it('should extend className', () => {

@@ -1,14 +1,14 @@
 language: node_js
 
 node_js:
-  - v7
+  - v8
 
 env:
   global:
   matrix:
     - TRAVIS_MATRIX=test
-    - TRAVIS_MATRIX=build
-    - TRAVIS_MATRIX=build.demo
+    - TRAVIS_MATRIX=build:page
+    - TRAVIS_MATRIX=build:lib
 
 script:
   - npm run $TRAVIS_MATRIX
