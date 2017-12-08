@@ -7,8 +7,7 @@ env:
   global:
   matrix:
     - TRAVIS_MATRIX=test
-    - TRAVIS_MATRIX=build:page
-    - TRAVIS_MATRIX=build:lib
+    - TRAVIS_MATRIX=build
 
 script:
   - npm run $TRAVIS_MATRIX
