@@ -1,7 +1,7 @@
 <h1 align="center">
   react-ripples
   <p>
-    <img width="128" src="https://raw.githubusercontent.com/rwu823/react-ripples/master/assets/logo.png"/>
+    <img width="200" src="https://raw.githubusercontent.com/rwu823/react-ripples/master/assets/logo.png"/>
   </p>
 </h1>
 
