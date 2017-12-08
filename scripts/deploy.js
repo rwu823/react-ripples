@@ -26,10 +26,8 @@ if (TRAVIS_BRANCH === 'master') {
   if (TRAVIS_MATRIX === 'build') {
     // Publish to NPM
     exec(`echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > ~/.npmrc`)
-    exec(`npm publish ./npm --access=public`)
-  }
+    exec(`npm publish ./out --access=public`)
 
-  if (TRAVIS_MATRIX === 'build.demo') {
     // Publish to gh-pages
     cd('gh-pages')
     exec('git init')

@@ -5,3 +5,5 @@ npm-debug.log
 /.nyc_output
 /npm
 /gh-pages
+.cache
+out
