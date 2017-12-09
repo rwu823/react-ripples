@@ -35,6 +35,10 @@ class Ripples extends PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    clearTimeout(this.timer)
+  }
+
   handleClick = (ev) => {
     if (ev.stopPropagation) {
       ev.stopPropagation()
@@ -63,7 +67,7 @@ class Ripples extends PureComponent {
       },
     })
 
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.setState({
         rippleStyle: {
           ...this.state.rippleStyle,
