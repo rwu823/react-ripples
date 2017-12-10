@@ -5,19 +5,19 @@ import Ripples from '../'
 
 describe('<Ripple />', () => {
   it('should extend className', () => {
-    const $ = shallow(<Ripples className="xyz"/>)
+    const $ = shallow(<Ripples className="xyz" />)
 
     expect($.hasClass('xyz')).toBe(true)
   })
 
-  it('should extend onClick', async() => {
-    const $ = mount(
-      <Ripples onClick={() => {
-
-      }}>
+  it('should extend onClick', async () => {
+    const com = (
+      <Ripples onClick={() => {}}>
         <span>Click me</span>
       </Ripples>
     )
+
+    const $ = mount(com)
 
     $.simulate('click')
 

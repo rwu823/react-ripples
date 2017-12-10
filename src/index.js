@@ -11,11 +11,15 @@ class Ripples extends PureComponent {
   static propTypes = {
     during: PropTypes.number,
     color: PropTypes.string,
+
+    onClick: PropTypes.func,
   }
 
   static defaultProps = {
     during: 600,
     color: 'rgba(0, 0, 0, .3)',
+
+    onClick: () => {},
   }
 
   constructor(props) {
@@ -44,12 +48,11 @@ class Ripples extends PureComponent {
       ev.stopPropagation()
     }
 
-    const { onClick, color, during } = this.props
+    const { onClick, during } = this.props
     const {
-      pageX, pageY, currentTarget: {
-        offsetLeft, offsetTop,
-        offsetWidth, offsetHeight
-      }
+      pageX,
+      pageY,
+      currentTarget: { offsetLeft, offsetTop, offsetWidth, offsetHeight },
     } = ev
 
     const left = pageX - offsetLeft
@@ -85,6 +88,7 @@ class Ripples extends PureComponent {
 
   render() {
     const { children, style, during, color, ...props } = this.props
+
     const { state, handleClick } = this
 
     const wrapStyle = {
@@ -94,7 +98,7 @@ class Ripples extends PureComponent {
 
     return (
       <div {...props} style={wrapStyle} onClick={handleClick}>
-        { children }
+        {children}
         <s style={state.rippleStyle} />
       </div>
     )
