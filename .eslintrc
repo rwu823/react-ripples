@@ -14,8 +14,11 @@
     "shelljs": true
   },
   "parser": "babel-eslint",
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
-    "semi": [2, "never"],
+    "prettier/prettier": 2,
 
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": [
