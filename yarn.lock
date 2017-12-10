@@ -55,6 +55,18 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@rwu823/eslint-config-base@rwu823/eslint-config-base":
+  version "1.0.0"
+  resolved "https://codeload.github.com/rwu823/eslint-config-base/tar.gz/28b32cf63bffa65c4c2e373f7a250464d6164587"
+  dependencies:
+    babel-eslint "^8.0.3"
+    eslint-config-airbnb "^16.1.0"
+    eslint-config-prettier "^2.9.0"
+    eslint-plugin-import "^2.8.0"
+    eslint-plugin-jsx-a11y "^6.0.2"
+    eslint-plugin-prettier "^2.3.1"
+    eslint-plugin-react "^7.5.1"
+
 "@types/node@*":
   version "8.0.57"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.57.tgz#e5d8b4dc112763e35cfc51988f4f38da3c486d99"
