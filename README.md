@@ -7,15 +7,15 @@
 
 <p align="center">
   <a href="https://www.npmjs.org/package/react-ripples" target="_blank">
-    <img src="https://img.shields.io/npm/v/react-ripples.svg?label=version"/>
+    <img src="https://img.shields.io/npm/v/react-ripples.svg?style=flat-square&label=version"/>
   </a>
   <a href="https://travis-ci.org/rwu823/react-ripples" target="_blank">
-    <img src="https://img.shields.io/travis/rwu823/react-ripples.svg?branch=master"/>
+    <img src="https://img.shields.io/travis/rwu823/react-ripples.svg?style=flat-square&branch=master"/>
   </a>
   <a href="https://codecov.io/github/rwu823/react-ripples" target="_blank">
-    <img src="https://img.shields.io/codecov/c/github/rwu823/react-ripples.svg"/>
+    <img src="https://img.shields.io/codecov/c/github/rwu823/react-ripples.svg?style=flat-square&"/>
   </a>
-  <img src="https://img.shields.io/github/license/rwu823/react-ripples.svg" />
+  <img src="https://img.shields.io/github/license/rwu823/react-ripples.svg?style=flat-square&" />
 </p>
 
 ## Installation
@@ -34,7 +34,6 @@ $ yarn add react-ripples --dev
 
 [live demo](https://rwu823.github.io/react-ripples)
 
-
 ## Usage
 
 ```jsx
@@ -46,7 +45,6 @@ render() {
   </Ripples>
 }
 ```
-
 
 ## API
 
@@ -68,4 +66,3 @@ static defaultProps = {
 | -------- | ----------------------------- |
 | during   | The css animate duration [ms] |
 | color    | The ripple's background color |
-
