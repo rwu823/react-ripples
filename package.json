@@ -6,22 +6,34 @@
   "scripts": {
     "dev": "NODE_ENV=development parcel dev/index.html --out-dir out",
     "build": "NODE_ENV=production npm-run-all --parallel build:*",
-    "build:page":
-      "rm -rf gh-pages && parcel build dev/index.html --no-minify --out-dir gh-pages --public-url ./",
+    "build:page": "rm -rf gh-pages && parcel build dev/index.html --no-minify --out-dir gh-pages --public-url ./",
     "build:lib": "rm -rf out && node scripts/build",
     "lint:eslint": "eslint ./ --ignore-path .gitignore",
     "test": "jest --coverage",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
-  "keywords": ["react", "ripple", "ripples", "effect", "button", "material"],
+  "keywords": [
+    "react",
+    "ripple",
+    "ripples",
+    "effect",
+    "button",
+    "material"
+  ],
   "author": "Rocky Wu <rwu823@gmail.com>",
   "license": "MIT",
   "jest": {
     "setupTestFrameworkScriptFile": "./scripts/jest-setup.js",
-    "coveragePathIgnorePatterns": ["/node_modules/", "./scripts/jest-setup"]
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "./scripts/jest-setup"
+    ]
   },
   "devDependencies": {
     "@rwu823/eslint-config-base": "rwu823/eslint-config-base",
