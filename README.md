@@ -27,12 +27,12 @@ $ npm install --save react-ripples
 or
 
 ```sh
-$ yarn add react-ripples --dev
+$ yarn add react-ripples
 ```
 
 ## Demo
 
-[live demo](https://rwu823.github.io/react-ripples)
+[Live Demo](https://rwu823.github.io/react-ripples)
 
 ## Usage
 
