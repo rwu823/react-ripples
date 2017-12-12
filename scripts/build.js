@@ -29,7 +29,7 @@ rollup
   .then(() => {
     pump(
       [
-        gu.src('package.json'),
+        gu.src(['package.json', 'README.md']),
         gu.dest('out'),
 
         gu.src('out/dist/*.js'),
