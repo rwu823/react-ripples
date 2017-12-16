@@ -36,7 +36,7 @@
     ]
   },
   "devDependencies": {
-    "@rwu823/eslint-config-base": "rwu823/eslint-config-base",
+    "@rwu823/eslint-config-base": "https://github.com/rwu823/eslint-config-base",
     "babel-preset-react-app": "^3.1.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
