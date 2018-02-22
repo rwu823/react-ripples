@@ -92,8 +92,8 @@ class Ripples extends PureComponent {
     const { state, handleClick } = this
 
     const wrapStyle = {
-      ...style,
       ...wrapStyleDefault,
+      ...style,
     }
 
     return (
