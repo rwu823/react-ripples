@@ -48,16 +48,17 @@ class Ripples extends PureComponent {
       ev.stopPropagation()
     }
 
-    const { onClick, during } = this.props
+    const { onClick, during } = this.props;
+    const { pageX, pageY, currentTarget } = ev;
     const {
-      pageX,
-      pageY,
-      currentTarget: { offsetLeft, offsetTop, offsetWidth, offsetHeight },
-    } = ev
-
-    const left = pageX - offsetLeft
-    const top = pageY - offsetTop
-    const size = Math.max(offsetWidth, offsetHeight)
+      left: offsetLeft,
+      top: offsetTop,
+      width: offsetWidth,
+      height: offsetHeight
+    } = currentTarget.getClientRects()[0];
+    const left = pageX - offsetLeft;
+    const top = pageY - offsetTop;
+    const size = Math.max(offsetWidth, offsetHeight);
 
     this.setState({
       rippleStyle: {
