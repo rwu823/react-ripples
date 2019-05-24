@@ -1,0 +1,10 @@
+{
+  "extends": "@ts-mono/base/tsconfig",
+  "exclude": [
+    "node_modules",
+    "out/**/*",
+  ],
+  "compilerOptions": {
+    "declaration": false,
+  }
+}

@@ -3,21 +3,8 @@
   "version": "1.1.2",
   "description": "The ripple effect. Ripples everything",
   "main": "dist/react-ripples.js",
-  "scripts": {
-    "dev": "NODE_ENV=development parcel dev/index.html --out-dir out",
-    "build": "NODE_ENV=production npm-run-all --parallel build:*",
-    "build:page": "rm -rf gh-pages && parcel build dev/index.html --no-minify --out-dir gh-pages --public-url ./",
-    "build:lib": "rm -rf out && node scripts/build",
-    "lint:eslint": "eslint ./ --ignore-path .gitignore",
-    "test": "jest --coverage",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
+  "module": "dist/react-ripples.es.js",
+  "typings": "dist/index.d.ts",
   "keywords": [
     "react",
     "ripple",
@@ -28,38 +15,43 @@
   ],
   "author": "Rocky Wu <rwu823@gmail.com>",
   "license": "MIT",
-  "jest": {
-    "setupTestFrameworkScriptFile": "./scripts/jest-setup.js",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "./scripts/jest-setup"
-    ]
-  },
   "devDependencies": {
-    "@rwu823/eslint-config-base": "https://github.com/rwu823/eslint-config-base",
-    "babel-preset-react-app": "^3.1.0",
-    "enzyme": "^3.2.0",
-    "enzyme-adapter-react-16": "^1.1.0",
-    "eslint": "^4.13.1",
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-size": "^2.1.0",
-    "gulp-uglify": "^3.0.0",
-    "husky": "^0.14.3",
-    "jest": "^21.2.1",
-    "lint-staged": "^6.0.0",
-    "npm-run-all": "^4.1.2",
-    "parcel-bundler": "^1.2.0",
-    "prettier": "^1.9.2",
-    "pump": "^2.0.0",
-    "react-dom": "^16.2.0",
-    "rollup": "^0.52.1",
-    "rollup-plugin-babel": "^3.0.2",
-    "shelljs": "^0.7.8"
+    "@ts-mono/base": "rwu823/ts-mono#base/latest",
+    "@types/next": "^8.0.5",
+    "@types/prismjs": "^1.16.0",
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "@types/styled-components": "^4.1.15",
+    "@zeit/next-typescript": "^1.1.1",
+    "babel-plugin-prismjs": "^1.0.2",
+    "babel-plugin-styled-components": "^1.10.0",
+    "next": "^8.1.0",
+    "prismjs": "^1.16.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "rollup": "^1.12.3",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "styled-components": "^4.2.0",
+    "typescript": "^3.4.5"
   },
-  "dependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0"
+  "repository": "https://github.com/rwu823/react-ripples.git",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "repository": "https://github.com/rwu823/react-ripples.git"
+  "scripts": {
+    "dev": "next",
+    "preview": "open gh-pages/index.html",
+    "build:page": "rm -rf gh-pages && next build && next export -o gh-pages",
+    "build:lib": "rm -rf out && rollup -c && cp README.md package.json out",
+    "test": "jest --coverage",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "eslint --fix"
+    ]
+  }
 }
