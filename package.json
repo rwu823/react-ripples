@@ -26,6 +26,7 @@
     "babel-plugin-prismjs": "^1.0.2",
     "babel-plugin-styled-components": "^1.10.0",
     "next": "^8.1.0",
+    "npm-run-all": "^4.1.5",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -46,6 +47,7 @@
     "preview": "open gh-pages/index.html",
     "build:page": "rm -rf gh-pages && next build && next export -o gh-pages",
     "build:lib": "rm -rf out && rollup -c && cp README.md package.json out",
+    "build": "run-p build:*",
     "test": "jest --coverage",
     "precommit": "lint-staged"
   },
