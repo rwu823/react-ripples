@@ -147,8 +147,8 @@ jobs:
       - node/checkout-install
       - restore_cache:
           key: build#{{ .Revision }}
-      - deploy-to-npm
-      - deploy-to-gh-pages
+      - node/deploy-to-npm
+      - node/deploy-to-gh-pages
 
   build:
     executor: node/v10
