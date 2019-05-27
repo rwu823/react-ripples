@@ -130,7 +130,7 @@ jobs:
     executor: node/v10
     steps:
       - node/checkout-install
-      - run: npx jest
+      - run: npx jest --coverage
       - run: bash <(curl -s https://codecov.io/bash)
   lint:
     executor: node/v10
