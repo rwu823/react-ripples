@@ -29,6 +29,16 @@ const Header = styled.header`
     text-align: center;
   `}
 `
+
+const Badges = styled.div`
+  ${(_p: {}) => css`
+    margin-bottom: 1em;
+
+    a {
+      margin-right: 4px;
+    }
+  `}
+`
 type Props = {}
 
 const App: NextFunctionComponent<Props> = () => {
@@ -43,11 +53,11 @@ const App: NextFunctionComponent<Props> = () => {
       </Head>
       <Header>
         <h1>React Ripples</h1>
-        <div>
+        <Badges>
           <a href="https://www.npmjs.org/package/react-ripples" target="_new">
             <img
               alt="npm version"
-              src="https://img.shields.io/npm/v/react-ripples.svg?label=version"
+              src="https://flat.badgen.net/npm/v/react-ripples"
             />
           </a>
 
@@ -64,10 +74,10 @@ const App: NextFunctionComponent<Props> = () => {
           >
             <img
               alt="code coverage"
-              src="https://img.shields.io/codecov/c/github/rwu823/react-ripples.svg"
+              src="https://flat.badgen.net/codecov/c/github/rwu823/react-ripples"
             />
           </a>
-        </div>
+        </Badges>
         <div className="star-badge">
           <a href="https://github.com/rwu823/react-ripples" target="_new">
             <img

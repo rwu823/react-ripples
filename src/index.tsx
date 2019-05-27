@@ -73,29 +73,32 @@ class Ripples extends React.PureComponent<RipplesProps, State> {
     const top = pageY - offsetTop
     const size = Math.max(offsetWidth, offsetHeight)
 
-    this.setState(state => {
-      return {
-        rippleStyle: {
-          ...state.rippleStyle,
-          left,
-          top,
-          opacity: 1,
-          transform: 'translate(-50%, -50%)',
-          transition: 'initial',
-        },
-      }
-    })
-
-    this.timer = setTimeout(() => {
-      this.setState(state => ({
-        rippleStyle: {
-          ...state.rippleStyle,
-          opacity: 0,
-          transform: `scale(${size / 9})`,
-          transition: `all ${during}ms`,
-        },
-      }))
-    })
+    this.setState(
+      state => {
+        return {
+          rippleStyle: {
+            ...state.rippleStyle,
+            left,
+            top,
+            opacity: 1,
+            transform: 'translate(-50%, -50%)',
+            transition: 'initial',
+          },
+        }
+      },
+      () => {
+        this.timer = setTimeout(() => {
+          this.setState(state => ({
+            rippleStyle: {
+              ...state.rippleStyle,
+              opacity: 0,
+              transform: `scale(${size / 9})`,
+              transition: `all ${during}ms`,
+            },
+          }))
+        }, 50)
+      },
+    )
 
     if (onClick) onClick(ev)
   }
