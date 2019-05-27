@@ -142,10 +142,12 @@ orbs:
 
 jobs:
   deploy-to-gh-pages:
-    - node/checkout-install
-    - restore_cache:
-        key: build#{{ .Revision }}
-    - node/deploy-to-gh-pages
+    executor: node/v10
+    steps:
+      - node/checkout-install
+      - restore_cache:
+          key: build#{{ .Revision }}
+      - node/deploy-to-gh-pages
   deploy-to-npm:
     executor: node/v10
     steps:
