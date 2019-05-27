@@ -1,0 +1,16 @@
+  {
+  "extends": "@ts-mono/base/tsconfig",
+  "exclude": [
+    "node_modules",
+    "pages",
+    "components",
+    "out",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+  ],
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "outDir": "out"
+  }
+}

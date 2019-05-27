@@ -1,9 +1,5 @@
 node_modules
 coverage
-npm-debug.log
-/dist
-/.nyc_output
-/npm
-/gh-pages
-.cache
 out
+.next
+gh-pages

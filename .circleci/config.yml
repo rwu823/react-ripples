@@ -1,0 +1,197 @@
+version: 2.1
+
+vars:
+  branch_master: &branch_master
+    filters:
+      branches:
+        only: master
+
+  branch_testing: &branch_testing
+    filters:
+      branches:
+        ignore:
+          - /^prod\//
+          - master
+
+orbs:
+  node:
+    executors:
+      machine:
+        environment:
+          - TZ: Asia/Taipei
+        machine:
+          docker_layer_caching: true
+      v10:
+        environment:
+          - TZ: Asia/Taipei
+        docker:
+          - image: circleci/node:10
+
+    commands:
+      setup-docker:
+        steps:
+          - setup_remote_docker:
+              docker_layer_caching: true
+
+      setup-npm:
+        parameters:
+          token:
+            type: string
+            default: $NPM_TOKEN
+        steps:
+          - run:
+              name: Setup NPM
+              command: echo "//registry.npmjs.org/:_authToken=<<parameters.token>>" >> ~/.npmrc
+
+      deploy-to-npm:
+        parameters:
+          dir:
+            type: string
+            default: out
+        steps:
+          - setup-npm
+          - run: npm publish << parameters.dir >>
+
+      setup-git:
+        parameters:
+          user:
+            type: string
+            default: Rocky Wu
+          email :
+            type: string
+            default : rwu823@gmail.com
+        steps:
+          - run:
+              name: Setup Git
+              command: |
+                git config --global user.name '<<parameters.user>>'
+                git config --global user.email '<<parameters.email>>'
+
+      deploy-to-gh-pages:
+        parameters:
+          dir:
+            type: string
+            default: gh-pages
+          repo:
+            type: string
+            default: $TOKEN_REPO
+        steps:
+          - setup-git
+          - run:
+              name: Deploy to GitHub pages
+              command: |
+                cd << parameters.dir >>
+                git init
+                git add .
+                git commit -nm "demo"
+
+                git push --quiet -f << parameters.repo >> HEAD
+
+      deploy-to-github:
+        parameters:
+          tag:
+            type: string
+            default: $GIT_TAG
+          dir:
+            type: string
+            default: out
+          repo:
+            type: string
+            default: $TOKEN_REPO
+          latest_branch_name:
+            type: string
+            default: latest
+          branch_name:
+            type: string
+            default: $GIT_TAG
+        steps:
+          - setup-git
+          - run:
+              name: Deploy to GitHub
+              command: |
+                cd << parameters.dir >>
+                git init
+                git add -A
+                git commit -nm "<< parameters.tag >>"
+
+                git checkout -b << parameters.latest_branch_name >>
+                git push --quiet -f << parameters.repo >> HEAD
+
+                git checkout -b << parameters.branch_name >>
+                git push --quiet << parameters.repo >> HEAD
+
+                git tag << parameters.tag >>
+                git push --quiet << parameters.repo >> << parameters.tag >>
+
+      checkout-install:
+        description: Checkout sources and install node_modules
+        steps:
+          - checkout
+          - restore_cache:
+              key: node_modules#{{ checksum "yarn.lock" }}
+          - run: yarn
+          - save_cache:
+              key: node_modules#{{ checksum "yarn.lock" }}
+              paths:
+                - node_modules
+          - run:
+              name: Set Env
+              command: |
+                echo "$(node scripts/export-env)" >> $BASH_ENV
+                source $BASH_ENV
+
+jobs:
+  deploy:
+    executor: node/v10
+    steps:
+      - node/checkout-install
+      - restore_cache:
+          key: build#{{ .Revision }}
+      - node/deploy-to-npm
+      - node/deploy-to-gh-pages
+
+  build:
+    executor: node/v10
+    steps:
+      - node/checkout-install
+      - run: yarn build
+      - save_cache:
+          key: build#{{ .Revision }}
+          paths:
+            - out
+            - gh-pages
+  test:
+    executor: node/v10
+    steps:
+      - node/checkout-install
+      - run: npx jest --coverage
+      - run: bash <(curl -s https://codecov.io/bash)
+  lint:
+    executor: node/v10
+    steps:
+      - node/checkout-install
+      - run:
+          name: Run ESLint only on modified files.
+          command: npx eslint $(git diff --diff-filter=d origin/HEAD --name-only --cached '*.ts' '*.tsx' '*.js')
+
+
+workflows:
+  version: 2
+
+  Deploying:
+    jobs:
+      - build:
+          <<: *branch_master
+      - deploy:
+          <<: *branch_master
+          requires:
+            - build
+
+  Testing:
+    jobs:
+      - build:
+          <<: *branch_testing
+      - test:
+          <<: *branch_testing
+      - lint:
+          <<: *branch_testing
