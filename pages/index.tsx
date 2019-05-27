@@ -19,7 +19,7 @@ const Main = styled.div`
       margin-top: 2em;
     }
 
-    .react-ripples {
+    .bootstrap-btns .react-ripples {
       margin-right: 7px;
     }
   `}
@@ -53,6 +53,7 @@ const App: NextFunctionComponent<Props> = () => {
       </Head>
       <Header>
         <h1>React Ripples</h1>
+        <em>– ripples everywhere</em>
         <Badges>
           <a href="https://www.npmjs.org/package/react-ripples" target="_new">
             <img
@@ -96,50 +97,52 @@ const App: NextFunctionComponent<Props> = () => {
   </button>
 </Ripples>
             `}</Code>
-        <Ripples>
-          <button type="button" className="btn btn-primary">
-            Primary
-          </button>
-        </Ripples>
+        <div className="bootstrap-btns">
+          <Ripples>
+            <button type="button" className="btn btn-primary">
+              Primary
+            </button>
+          </Ripples>
 
-        <Ripples>
-          <button type="button" className="btn btn-secondary">
-            Secondary
-          </button>
-        </Ripples>
+          <Ripples>
+            <button type="button" className="btn btn-secondary">
+              Secondary
+            </button>
+          </Ripples>
 
-        <Ripples>
-          <button type="button" className="btn btn-success">
-            Success
-          </button>
-        </Ripples>
+          <Ripples>
+            <button type="button" className="btn btn-success">
+              Success
+            </button>
+          </Ripples>
 
-        <Ripples>
-          <button type="button" className="btn btn-danger">
-            Danger
-          </button>
-        </Ripples>
+          <Ripples>
+            <button type="button" className="btn btn-danger">
+              Danger
+            </button>
+          </Ripples>
 
-        <Ripples>
-          <button type="button" className="btn btn-warning">
-            Warning
-          </button>
-        </Ripples>
-        <Ripples>
-          <button type="button" className="btn btn-info">
-            Info
-          </button>
-        </Ripples>
-        <Ripples>
-          <button type="button" className="btn btn-light">
-            Light
-          </button>
-        </Ripples>
-        <Ripples>
-          <button type="button" className="btn btn-dark">
-            Dark
-          </button>
-        </Ripples>
+          <Ripples>
+            <button type="button" className="btn btn-warning">
+              Warning
+            </button>
+          </Ripples>
+          <Ripples>
+            <button type="button" className="btn btn-info">
+              Info
+            </button>
+          </Ripples>
+          <Ripples>
+            <button type="button" className="btn btn-light">
+              Light
+            </button>
+          </Ripples>
+          <Ripples>
+            <button type="button" className="btn btn-dark">
+              Dark
+            </button>
+          </Ripples>
+        </div>
 
         <h2>Change color and during</h2>
         <Code>{`
@@ -169,6 +172,40 @@ const App: NextFunctionComponent<Props> = () => {
             the bounds of the view or extend beyond the bounds of the view.
           </blockquote>
         </Ripples>
+
+        <h2>Ripples with any shape</h2>
+        <p>For example: a radius button</p>
+
+        <Code>
+          {`
+<div
+  style={{
+    display: 'inline-flex',
+    borderRadius: 25,
+    overflow: 'hidden',
+  }}
+>
+  <Ripples color={'yellow'}>
+    <button type="button" className="btn btn-primary">
+      Primary
+    </button>
+  </Ripples>
+</div>
+  `}
+        </Code>
+        <div
+          style={{
+            display: 'inline-flex',
+            borderRadius: 25,
+            overflow: 'hidden',
+          }}
+        >
+          <Ripples color={'yellow'}>
+            <button type="button" className="btn btn-primary">
+              Primary
+            </button>
+          </Ripples>
+        </div>
       </Main>
       <footer />
     </div>

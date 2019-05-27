@@ -15,7 +15,7 @@ type State = Readonly<{
 
 const boxStyle: CSSProperties = {
   position: 'relative',
-  display: 'inline-block',
+  display: 'inline-flex',
   overflow: 'hidden',
 }
 
