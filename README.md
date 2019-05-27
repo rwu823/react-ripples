@@ -14,6 +14,12 @@
   </p>
 </h1>
 
+## Attraction
+- ✅ Zero dependencies
+- 🚀 Tiny and blazing fast (Pure Component)
+- ⚡ Typescript and definition file supported
+- 🌍 SSR supported
+
 ## Installation
 
 ```sh

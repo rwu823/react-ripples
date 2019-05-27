@@ -104,7 +104,7 @@ class Ripples extends React.PureComponent<RipplesProps, State> {
   }
 
   render() {
-    const { children, during, onClick, className, ...props } = this.props
+    const { children, during, color, onClick, className, ...props } = this.props
     const { rippleStyle } = this.state
 
     return (

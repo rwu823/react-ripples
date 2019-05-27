@@ -132,16 +132,6 @@ const App: NextFunctionComponent<Props> = () => {
               Info
             </button>
           </Ripples>
-          <Ripples>
-            <button type="button" className="btn btn-light">
-              Light
-            </button>
-          </Ripples>
-          <Ripples>
-            <button type="button" className="btn btn-dark">
-              Dark
-            </button>
-          </Ripples>
         </div>
 
         <h2>Change color and during</h2>
