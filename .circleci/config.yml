@@ -85,7 +85,7 @@ orbs:
                 git add .
                 git commit -nm "demo"
 
-                git push --quiet -f << parameters.repo >> HEAD
+                git push --quiet -f << parameters.repo >> HEAD:gh-pages
 
       deploy-to-github:
         parameters:
