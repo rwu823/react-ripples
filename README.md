@@ -1,11 +1,5 @@
 <h1 align="center">
   react-ripples
-  <p>
-    <img width="200" src="https://raw.githubusercontent.com/rwu823/react-ripples/master/assets/logo.png"/>
-  </p>
-</h1>
-
-<p align="center">
   <a href="https://www.npmjs.org/package/react-ripples" target="_blank">
     <img src="https://flat.badgen.net/npm/v/react-ripples"/>
   </a>
@@ -15,8 +9,10 @@
   <a href="https://codecov.io/github/rwu823/react-ripples" target="_blank">
     <img src="https://flat.badgen.net/codecov/c/github/rwu823/react-ripples"/>
   </a>
-</p>
-
+  <p>
+    <img width="200" src="https://raw.githubusercontent.com/rwu823/react-ripples/master/assets/logo.png"/>
+  </p>
+</h1>
 
 ## Installation
 
