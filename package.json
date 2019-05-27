@@ -3,7 +3,7 @@
   "version": "1.1.2",
   "description": "The ripple effect. Ripples everything",
   "main": "dist/react-ripples.js",
-  "module": "dist/react-ripples.es.js",
+  "module": "dist/react-ripples.esm.js",
   "typings": "dist/index.d.ts",
   "keywords": [
     "react",
