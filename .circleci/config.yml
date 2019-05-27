@@ -81,6 +81,7 @@ orbs:
               name: Deploy to GitHub pages
               command: |
                 cd << parameters.dir >>
+                touch .nojekyll
                 git init
                 git add .
                 git commit -nm "demo"
