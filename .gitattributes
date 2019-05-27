@@ -1,2 +1,2 @@
 #pattern  filter=crypt diff=crypt
-.env.ts  filter=crypt diff=crypt
+env.ts  filter=crypt diff=crypt

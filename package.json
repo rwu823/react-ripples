@@ -43,6 +43,7 @@
     }
   },
   "scripts": {
+    "transcrypt": "curl -s https://raw.githubusercontent.com/elasticdog/transcrypt/master/transcrypt | bash -s --",
     "dev": "next",
     "preview": "open gh-pages/index.html",
     "build:page": "rm -rf gh-pages && next build && next export -o gh-pages",
