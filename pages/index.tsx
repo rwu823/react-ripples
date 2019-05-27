@@ -53,7 +53,7 @@ const App: NextFunctionComponent<Props> = () => {
       </Head>
       <Header>
         <h1>React Ripples</h1>
-        <em>– ripples everywhere</em>
+        <em>– Ripple effect, ripples everywhere</em>
         <Badges>
           <a href="https://www.npmjs.org/package/react-ripples" target="_new">
             <img
