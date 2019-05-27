@@ -1,12 +1,7 @@
   {
   "extends": "@ts-mono/base/tsconfig",
-  "exclude": [
-    "node_modules",
-    "pages",
-    "components",
-    "out",
-    "**/*.spec.ts",
-    "**/*.test.ts",
+  "files": [
+    "src/index.tsx"
   ],
   "compilerOptions": {
     "module": "esnext",

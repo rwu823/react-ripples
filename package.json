@@ -47,7 +47,7 @@
     "dev": "next",
     "preview": "open gh-pages/index.html",
     "build:page": "rm -rf gh-pages && next build && next export -o gh-pages",
-    "build:lib": "rm -rf out && rollup -c && cp README.md package.json out",
+    "build:lib": "rm -rf out && rollup -c && node scripts/cp",
     "build": "run-p build:*",
     "test": "jest --coverage",
     "precommit": "lint-staged"
