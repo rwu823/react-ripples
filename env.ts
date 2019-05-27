@@ -1,10 +1,6 @@
-import pkg from './package.json'
-
-export const NPM_TOKEN = '92ef6afa-74df-45b1-a9e8-5887e354f6f9'
-
-export const GITHUB_TOKEN = '2fff1ee92be30549c686b329939068f272b239d1'
-
-export const TOKEN_REPO = pkg.repository.replace(
-  'github.com',
-  `${GITHUB_TOKEN}@github.com`,
-)
+U2FsdGVkX19Q8thrYQMuxODjnyx4rdKEpcsV7Hwzw0555XADDh0JxXLI0MD01h//
+o9+HFzKYX73c9bwuE961NwXVgcdYv3QJ812ysa09OXpaM296dJ0Kep8Y//fT23Tw
+MBBHLO4MirwCoGqznyJpLhNFMEqH0lbVaETfy52dJslzpAE/smxzWJNPIOlu68n3
+UljmDVZFK2UPa8dhjvhSP+aI3V7CCi7T/u7UvIx235fv3Lfk4CEKQls72Wg99Aes
+OckGRyiIO6viTL/lPvzvSze0fafzdcuAxQxR4qwQ+tENCXAGzorwltC1B34kouzS
+jD2yMVtrR+jm5rwu8J358HG4BTTaS/OmR2fp5MJF9AcPD9QX2iY+H3Nyv855LFq7
