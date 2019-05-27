@@ -9,6 +9,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  font-size: 1rem;
 }
 
 *, *:before, *:after {
@@ -17,5 +18,9 @@ body {
 
 .btn:focus {
   box-shadow: initial !important;
+}
+
+.blockquote {
+  font-size: .8rem;
 }
 `

@@ -5,6 +5,9 @@ import Head from 'next/head'
 import styled, { css } from 'styled-components'
 import Ripples from '../src'
 import Code from '../components/Code'
+import GA from '../share/GA'
+
+const ga = new GA('UA-4476856-23')
 
 const Main = styled.div`
   ${(_p: {}) => css`
@@ -13,11 +16,11 @@ const Main = styled.div`
     margin: 0 auto;
 
     h2 {
-      margin-top: 1em;
+      margin-top: 2em;
     }
 
     .react-ripples {
-      margin: 0 4px;
+      margin-right: 7px;
     }
   `}
 `
@@ -29,6 +32,10 @@ const Header = styled.header`
 type Props = {}
 
 const App: NextFunctionComponent<Props> = () => {
+  React.useEffect(() => {
+    ga.pageView()
+  }, [])
+
   return (
     <div>
       <Head>
@@ -132,7 +139,7 @@ const App: NextFunctionComponent<Props> = () => {
             `}</Code>
 
         <Ripples color="#fff" during={1200}>
-          <button type="button" className="n-outline-primary">
+          <button type="button" className="btn-outline-primary">
             Primary
           </button>
         </Ripples>
