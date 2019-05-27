@@ -6,6 +6,4 @@ const withAttrs = <P, Element>(Component: React.ComponentType<P>) => (
   props: P & React.HTMLAttributes<Element>,
 ) => <Component {...props} />
 
-// module.exports = withAttrs
-
 export default withAttrs
