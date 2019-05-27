@@ -1,4 +1,4 @@
-<h2 align="center">
+<h3 align="center">
   react-ripples
   <a href="https://www.npmjs.org/package/react-ripples" target="_blank">
     <img src="https://flat.badgen.net/npm/v/react-ripples"/>
@@ -12,7 +12,7 @@
   <p>
     <img width="200" src="./assets/logo2.png"/>
   </p>
-</h2>
+</h3>
 
 ## Attraction
 - ✅ Zero dependencies
