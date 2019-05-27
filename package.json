@@ -1,6 +1,6 @@
 {
   "name": "react-ripples",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "The ripple effect. Ripples everywhere",
   "main": "dist/react-ripples.js",
   "module": "dist/react-ripples.esm.js",
