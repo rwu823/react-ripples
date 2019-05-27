@@ -5,7 +5,7 @@ import Head from 'next/head'
 import styled, { css } from 'styled-components'
 import Ripples from '../src'
 import Code from '../components/Code'
-import GA from '../share/GA'
+import GA from '../src/GA'
 
 const ga = new GA('UA-4476856-23')
 
