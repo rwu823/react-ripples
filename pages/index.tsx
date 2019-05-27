@@ -50,12 +50,14 @@ const App: NextFunctionComponent<Props> = () => {
               src="https://img.shields.io/npm/v/react-ripples.svg?label=version"
             />
           </a>
-          <a href="https://travis-ci.org/rwu823/react-ripples" target="_new">
+
+          <a href="https://circleci.com/gh/rwu823/react-ripples">
             <img
-              alt="ci status"
-              src="https://img.shields.io/travis/rwu823/react-ripples.svg?branch=master"
+              alt="circle ci"
+              src="https://flat.badgen.net/circleci/github/rwu823/react-ripples/master"
             />
           </a>
+
           <a
             href="https://codecov.io/github/rwu823/react-ripples"
             target="_new"

@@ -9,14 +9,15 @@
   <a href="https://www.npmjs.org/package/react-ripples" target="_blank">
     <img src="https://img.shields.io/npm/v/react-ripples.svg?style=flat-square&label=version"/>
   </a>
-  <a href="https://travis-ci.org/rwu823/react-ripples" target="_blank">
-    <img src="https://img.shields.io/travis/rwu823/react-ripples.svg?style=flat-square&branch=master"/>
+  <a href="https://circleci.com/gh/rwu823/react-ripples" alt="Build Status">
+    <img src="https://flat.badgen.net/circleci/github/rwu823/react-ripples/master" />
   </a>
   <a href="https://codecov.io/github/rwu823/react-ripples" target="_blank">
     <img src="https://img.shields.io/codecov/c/github/rwu823/react-ripples.svg?style=flat-square&"/>
   </a>
   <img src="https://img.shields.io/github/license/rwu823/react-ripples.svg?style=flat-square&" />
 </p>
+
 
 ## Installation
 
