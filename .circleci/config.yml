@@ -67,6 +67,26 @@ orbs:
                 git config --global user.name '<<parameters.user>>'
                 git config --global user.email '<<parameters.email>>'
 
+      deploy-to-gh-pages:
+        parameters:
+          dir:
+            type: string
+            default: gh-pages
+          repo:
+            type: string
+            default: $TOKEN_REPO
+        steps:
+          - setup-git
+          - run:
+              name: Deploy to GitHub pages
+              command: |
+                cd << parameters.dir >>
+                git init
+                git add .
+                git commit -nm "demo"
+
+                git push --quiet -f << parameters.repo >> HEAD
+
       deploy-to-github:
         parameters:
           tag:
@@ -121,11 +141,25 @@ orbs:
                 source $BASH_ENV
 
 jobs:
+  deploy:
+    executor: node/v10
+    steps:
+      - node/checkout-install
+      - restore_cache:
+          key: build#{{ .Revision }}
+      - deploy-to-npm
+      - deploy-to-gh-pages
+
   build:
     executor: node/v10
     steps:
       - node/checkout-install
       - run: yarn build
+      - save_cache:
+          key: build#{{ .Revision }}
+          paths:
+            - out
+            - gh-pages
   test:
     executor: node/v10
     steps:
@@ -143,6 +177,15 @@ jobs:
 
 workflows:
   version: 2
+
+  Deploying:
+    jobs:
+      - build:
+          <<: *branch_master
+      - deploy:
+          <<: *branch_master
+          requires:
+            - build
 
   Testing:
     jobs:
