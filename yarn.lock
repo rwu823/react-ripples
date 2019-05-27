@@ -945,7 +945,7 @@
 
 "@rwu823/env@rwu823/env":
   version "0.0.0"
-  resolved "git+ssh://git@github.com/rwu823/env.git#78f5284c33ef141e78e6e673e706bf1cb0e7beef"
+  resolved "git+ssh://git@github.com/rwu823/env.git#4a9ff510547ecc2287f3214e9af2e6d83c5f804e"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
