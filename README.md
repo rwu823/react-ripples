@@ -10,7 +10,7 @@
     <img src="https://flat.badgen.net/codecov/c/github/rwu823/react-ripples"/>
   </a>
   <p>
-    <img width="200" src="https://raw.githubusercontent.com/rwu823/react-ripples/master/assets/logo.png"/>
+    <img width="200" src="./assets/logo2.png"/>
   </p>
 </h1>
 
