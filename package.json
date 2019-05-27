@@ -31,7 +31,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rollup": "^1.12.3",
+    "rollup": "^1.12.4",
     "rollup-plugin-typescript2": "^0.21.1",
     "styled-components": "^4.2.0",
     "typescript": "^3.4.5"
