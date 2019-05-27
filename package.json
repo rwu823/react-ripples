@@ -56,5 +56,8 @@
     "*.{ts,tsx,js}": [
       "eslint --fix"
     ]
+  },
+  "optionalDependencies": {
+    "@rwu823/env": "rwu823/env"
   }
 }

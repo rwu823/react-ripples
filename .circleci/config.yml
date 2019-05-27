@@ -114,17 +114,10 @@ orbs:
               key: node_modules#{{ checksum "yarn.lock" }}
               paths:
                 - node_modules
-          - run: git checkout -- .
-          - run:
-              name: Decrypt Secret
-              command: |
-                sudo apt-get -y -qq update
-                sudo apt-get install bsdmainutils
-                yarn --silent transcrypt -p "$REPO_SECRET" -y
           - run:
               name: Set Env
               command: |
-                echo "$(yarn --silent ts-node scripts/export-env)" >> $BASH_ENV
+                echo "$(node scripts/export-env)" >> $BASH_ENV
                 source $BASH_ENV
 
 jobs:
