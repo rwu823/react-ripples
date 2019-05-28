@@ -2,9 +2,10 @@
   "extends": "@ts-mono/base/tsconfig",
   "exclude": [
     "node_modules",
-    "out/**/*",
+    "out",
   ],
   "compilerOptions": {
     "declaration": false,
+    "allowSyntheticDefaultImports": true,
   }
 }

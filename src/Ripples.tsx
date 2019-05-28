@@ -1,11 +1,10 @@
 import React, { CSSProperties } from 'react'
 import PropTypes from 'prop-types'
-import withAttrs from './withAttrs'
 
 export interface RipplesProps {
   during?: number
   color?: string
-  onClick?: Function
+  onClick?: (ev: React.MouseEvent<HTMLDivElement>) => any
   className?: string
 }
 
@@ -121,5 +120,4 @@ class Ripples extends React.PureComponent<RipplesProps, State> {
   }
 }
 
-// module.exports =
-export default withAttrs(Ripples)
+export default Ripples

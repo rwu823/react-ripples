@@ -47,10 +47,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
             rel="stylesheet"
           />
-          <link
-            href="https://cdn.jsdelivr.net/npm/prism-themes@1.1.0/themes/prism-vs.css"
-            rel="stylesheet"
-          />
           {this.props.styles}
         </Head>
         <body className="custom_class">

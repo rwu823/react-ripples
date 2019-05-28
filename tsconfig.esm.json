@@ -1,0 +1,10 @@
+  {
+  "extends": "./tsconfig.cjs",
+  "files": [
+    "src/index.ts"
+  ],
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "out/esm"
+  }
+}

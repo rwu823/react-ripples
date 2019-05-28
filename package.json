@@ -1,10 +1,10 @@
 {
   "name": "react-ripples",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "The ripple effect. Ripples everywhere",
-  "main": "dist/react-ripples.js",
-  "module": "dist/react-ripples.esm.js",
-  "typings": "dist/index.d.ts",
+  "main": "cjs",
+  "module": "esm",
+  "typings": "cjs/index.d.ts",
   "keywords": [
     "react",
     "ripple",
@@ -23,7 +23,6 @@
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.15",
     "@zeit/next-typescript": "^1.1.1",
-    "babel-plugin-prismjs": "^1.0.2",
     "babel-plugin-styled-components": "^1.10.0",
     "next": "^8.1.0",
     "npm-run-all": "^4.1.5",
@@ -31,8 +30,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rollup": "^1.12.4",
-    "rollup-plugin-typescript2": "^0.21.1",
     "styled-components": "^4.2.0",
     "typescript": "^3.4.5"
   },
@@ -47,8 +44,9 @@
     "dev": "next",
     "preview": "open gh-pages/index.html",
     "build:page": "rm -rf gh-pages && next build && next export -o gh-pages",
-    "build:lib": "rm -rf out && rollup -c && node scripts/cp",
-    "build": "run-p build:*",
+    "build:cjs": "tsc -b tsconfig.cjs.json",
+    "build:esm": "tsc -b tsconfig.esm.json",
+    "build": "rm -rf out && run-p build:* && node scripts/cp",
     "test": "jest --coverage",
     "precommit": "lint-staged"
   },

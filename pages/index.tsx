@@ -3,9 +3,14 @@ import { NextFunctionComponent } from 'next'
 import Head from 'next/head'
 
 import styled, { css } from 'styled-components'
-import Ripples from '../src'
+import Ripples, { createRipples } from '../src'
 import Code from '../components/Code'
-import GA from '../src/GA'
+import GA from '../share/GA'
+
+const MyRipples = createRipples({
+  color: 'purple',
+  during: 2200,
+})
 
 const ga = new GA('UA-4476856-23')
 
@@ -91,6 +96,8 @@ const App: NextFunctionComponent<Props> = () => {
       <Main>
         <h2>Works with Bootstrap buttons</h2>
         <Code>{`
+import Ripples from 'react-ripples'
+
 <Ripples>
   <button type="button" className="btn btn-primary">
     Primary
@@ -196,8 +203,26 @@ const App: NextFunctionComponent<Props> = () => {
             </button>
           </Ripples>
         </div>
+
+        <h2>API</h2>
+        <h3>createRipples</h3>
+        <p>You can easy to extend default props without HOC.</p>
+        <Code>
+          {`
+import { createRipples } from 'react-ripples'
+
+const MyRipples = createRipples({
+  color: 'purple',
+  during: 2200,
+})
+            `}
+        </Code>
+        <MyRipples>
+          <button type="button" className="btn btn-primary">
+            Primary
+          </button>
+        </MyRipples>
       </Main>
-      <footer />
     </div>
   )
 }
