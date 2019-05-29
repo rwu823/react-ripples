@@ -16,7 +16,7 @@ const ga = new GA('UA-4476856-23')
 
 const Main = styled.div`
   ${(_p: {}) => css`
-    padding: 12px;
+    padding-bottom: 5em;
     width: 700px;
     margin: 0 auto;
 
@@ -205,7 +205,7 @@ import Ripples from 'react-ripples'
         </div>
 
         <h2>API</h2>
-        <h3>createRipples</h3>
+        <h3>createRipples([defaultProps])</h3>
         <p>You can easy to extend default props without HOC.</p>
         <Code>
           {`

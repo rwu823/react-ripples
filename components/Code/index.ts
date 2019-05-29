@@ -1,9 +1,5 @@
-import Code, { CodeProps } from './Code'
+import { createCode } from './createCode'
 
-export const createCode = (defaultProps: Partial<CodeProps> = {}) => {
-  Object.assign(Code.defaultProps, defaultProps)
+export default createCode()
 
-  return Code
-}
-
-export default Code
+export * from './createCode'

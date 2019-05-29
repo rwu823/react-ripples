@@ -2,30 +2,26 @@ import styled from 'styled-components'
 
 const Pre = styled.div`
   /**
- * Darcula theme
- *
- * Adapted from a theme based on:
- * IntelliJ Darcula Theme (https://github.com/bulenkov/Darcula)
- *
- * @author Alexandre Paradis <service.paradis@gmail.com>
- * @version 1.0
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
  */
+  @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
 
   code[class*='language-'],
   pre[class*='language-'] {
-    color: #a9b7c6;
-    font-family: Consolas, Monaco, 'Andale Mono', monospace;
-    direction: ltr;
+    color: #abb2bf;
+    background: none;
+    font-family: 'Anonymous Pro', monospace;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
+    word-wrap: normal;
     line-height: 1.5;
-
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
@@ -36,18 +32,24 @@ const Pre = styled.div`
   pre[class*='language-'] ::-moz-selection,
   code[class*='language-']::-moz-selection,
   code[class*='language-'] ::-moz-selection {
-    color: inherit;
-    background: rgba(33, 66, 131, 0.85);
+    text-shadow: none;
+    background: #383e49;
   }
 
   pre[class*='language-']::selection,
   pre[class*='language-'] ::selection,
   code[class*='language-']::selection,
   code[class*='language-'] ::selection {
-    color: inherit;
-    background: rgba(33, 66, 131, 0.85);
+    text-shadow: none;
+    background: #9aa2b1;
   }
 
+  @media print {
+    code[class*='language-'],
+    pre[class*='language-'] {
+      text-shadow: none;
+    }
+  }
   /* Code blocks */
   pre[class*='language-'] {
     padding: 1em;
@@ -57,81 +59,74 @@ const Pre = styled.div`
 
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
-    background: #2b2b2b;
+    background: #282c34;
   }
 
   /* Inline code */
   :not(pre) > code[class*='language-'] {
     padding: 0.1em;
     border-radius: 0.3em;
+    white-space: normal;
   }
 
   .token.comment,
   .token.prolog,
-  .token.cdata {
-    color: #808080;
-  }
-
-  .token.delimiter,
-  .token.boolean,
-  .token.keyword,
-  .token.selector,
-  .token.important,
-  .token.atrule {
-    color: #cc7832;
-  }
-
-  .token.operator,
-  .token.punctuation,
-  .token.attr-name {
-    color: #a9b7c6;
-  }
-
-  .token.tag,
-  .token.tag .punctuation,
   .token.doctype,
-  .token.builtin {
-    color: #e8bf6a;
+  .token.cdata {
+    color: #5c6370;
   }
 
-  .token.entity,
-  .token.number,
-  .token.symbol {
-    color: #6897bb;
+  .token.punctuation {
+    color: #abb2bf;
+  }
+
+  .token.selector,
+  .token.tag {
+    color: #e06c75;
   }
 
   .token.property,
+  .token.boolean,
+  .token.number,
   .token.constant,
-  .token.variable {
-    color: #9876aa;
+  .token.symbol,
+  .token.attr-name,
+  .token.deleted {
+    color: #d19a66;
   }
 
   .token.string,
-  .token.char {
-    color: #6a8759;
-  }
-
+  .token.char,
   .token.attr-value,
-  .token.attr-value .punctuation {
-    color: #a5c261;
-  }
-  .token.attr-value .punctuation:first-child {
-    color: #a9b7c6;
+  .token.builtin,
+  .token.inserted {
+    color: #98c379;
   }
 
-  .token.url {
-    color: #287bde;
-    text-decoration: underline;
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    color: #56b6c2;
+  }
+
+  .token.atrule,
+  .token.keyword {
+    color: #c678dd;
   }
 
   .token.function {
-    color: #ffc66d;
+    color: #61afef;
   }
 
-  .token.regex {
-    background: #364135;
+  .token.regex,
+  .token.important,
+  .token.variable {
+    color: #c678dd;
   }
 
+  .token.important,
   .token.bold {
     font-weight: bold;
   }
@@ -140,32 +135,48 @@ const Pre = styled.div`
     font-style: italic;
   }
 
-  .token.inserted {
-    background: #294436;
+  .token.entity {
+    cursor: help;
   }
 
-  .token.deleted {
-    background: #484a4a;
+  pre.line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
   }
 
-  /*code.language-css .token.punctuation {
-	color: #cc7832;
-}*/
-
-  code.language-css .token.property,
-  code.language-css .token.property + .token.punctuation {
-    color: #a9b7c6;
+  pre.line-numbers > code {
+    position: relative;
   }
 
-  code.language-css .token.id {
-    color: #ffc66d;
+  .line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 0;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
-  code.language-css .token.selector > .token.class,
-  code.language-css .token.selector > .token.attribute,
-  code.language-css .token.selector > .token.pseudo-class,
-  code.language-css .token.selector > .token.pseudo-element {
-    color: #ffc66d;
+  .line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+  }
+
+  .line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #5c6370;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
   }
 `
 export default Pre

@@ -6,11 +6,12 @@ const Pre = styled.div`
  * Inspired by Visual Studio syntax coloring
  */
 
+  @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
+
   code[class*='language-'],
   pre[class*='language-'] {
     color: #393a34;
-    font-family: 'Consolas', 'Bitstream Vera Sans Mono', 'Courier New', Courier,
-      monospace;
+    font-family: 'Anonymous Pro', monospace;
     direction: ltr;
     text-align: left;
     white-space: pre;

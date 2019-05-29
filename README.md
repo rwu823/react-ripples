@@ -15,9 +15,11 @@
 </h3>
 
 ## Attraction
+
 - ✅ Zero dependencies
 - 🚀 Tiny and blazing fast (Pure Component)
 - ⚡ Typescript and definition file supported
+- 🎨 Pure CSS animation
 - 🌍 SSR supported
 
 ## Installation
@@ -49,6 +51,18 @@ render() {
 ```
 
 ## API
+### createRipples([defaultProps])
+
+Extends default props without HOC
+
+```jsx
+import { createRipples } from 'react-ripples'
+
+const MyRipples = createRipples({
+  color: 'purple',
+  during: 2200,
+})
+```
 
 ### Props
 
