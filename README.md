@@ -1,17 +1,27 @@
-<h3 align="center">
-  react-ripples
-  <a href="https://www.npmjs.org/package/react-ripples" target="_blank">
+<h1 align="center">
+  <img width="200" src="./assets/logo2.png"/>
+  <p>react-ripples</p>
+</h1>
+
+<p align="center">
+  <a href="https://www.npmjs.org/package/react-ripples">
     <img src="https://flat.badgen.net/npm/v/react-ripples"/>
   </a>
   <a href="https://circleci.com/gh/rwu823/react-ripples" alt="Build Status">
     <img src="https://flat.badgen.net/circleci/github/rwu823/react-ripples/master" />
   </a>
-  <a href="https://codecov.io/github/rwu823/react-ripples" target="_blank">
+  <a href="https://codecov.io/github/rwu823/react-ripples">
     <img src="https://flat.badgen.net/codecov/c/github/rwu823/react-ripples"/>
   </a>
-  <p>
-    <img width="200" src="./assets/logo2.png"/>
-  </p>
+  <img src="https://flat.badgen.net/bundlephobia/minzip/react-ripples" />
+</p>
+
+<h4 align="center">
+  <sub>Material ripple effect, ripples everywhere</sub>
+</h4>
+
+<h3 align="center">
+  <a href="https://rwu823.github.io/react-ripples">Live Demo</a>
 </h3>
 
 ## Attraction
@@ -34,10 +44,6 @@ or
 $ yarn add react-ripples
 ```
 
-## Demo
-
-[Live Demo](https://rwu823.github.io/react-ripples)
-
 ## Usage
 
 ```jsx
@@ -51,6 +57,7 @@ render() {
 ```
 
 ## API
+
 ### createRipples([defaultProps])
 
 Extends default props without HOC
