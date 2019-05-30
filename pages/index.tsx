@@ -57,6 +57,7 @@ const App: NextFunctionComponent<Props> = () => {
         <title>React Ripples - Demo</title>
       </Head>
       <Header>
+        <img alt="logo" width="200" src="./static/logo.png" />
         <h1>React Ripples</h1>
         <em>– Ripple effect, ripples everywhere</em>
         <Badges>
@@ -83,6 +84,10 @@ const App: NextFunctionComponent<Props> = () => {
               src="https://flat.badgen.net/codecov/c/github/rwu823/react-ripples"
             />
           </a>
+          <img
+            alt="minify size"
+            src="https://flat.badgen.net/bundlephobia/minzip/react-ripples"
+          />
         </Badges>
         <div className="star-badge">
           <a href="https://github.com/rwu823/react-ripples" target="_new">

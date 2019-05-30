@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="200" src="./assets/logo2.png"/>
+  <img width="200" src="./static/logo.png"/>
   <p>react-ripples</p>
 </h1>
 
