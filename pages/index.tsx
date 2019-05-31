@@ -26,6 +26,20 @@ const Main = styled.div`
 
     .bootstrap-btns .react-ripples {
       margin-right: 7px;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 700px) {
+      width: auto;
+      padding: 1rem;
+
+      h2 {
+        font-size: 4.5vw;
+      }
+
+      h3 {
+        font-size: 4vw;
+      }
     }
   `}
 `
@@ -55,6 +69,10 @@ const App: NextFunctionComponent<Props> = () => {
     <div>
       <Head>
         <title>React Ripples - Demo</title>
+        <meta
+          name="description"
+          content="The material ripple effect. Ripples everywhere "
+        />
       </Head>
       <Header>
         <img alt="logo" width="200" src="./static/logo.png" />
