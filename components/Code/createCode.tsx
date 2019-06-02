@@ -1,8 +1,10 @@
+import React from 'react'
+
 import Prism from 'prismjs'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-tsx'
 import 'prismjs/components/prism-typescript'
-import React from 'react'
+
 import Dark from './dark.theme'
 import White from './white.theme'
 
@@ -29,7 +31,6 @@ export const createCode = (defaultProps: Partial<CodeProps> = {}) => {
       <Theme>
         <pre>
           <code
-            className={`language-${language}`}
             dangerouslySetInnerHTML={{ __html: code }} // eslint-disable-line react/no-danger
           />
         </pre>

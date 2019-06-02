@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
-const Pre = styled.div`
+const CodeBlockTheme = styled.div`
   /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
  */
-  @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
 
-  code[class*='language-'],
-  pre[class*='language-'] {
+  @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
+  code,
+  pre {
     color: #abb2bf;
     background: none;
     font-family: 'Anonymous Pro', monospace;
@@ -19,51 +19,38 @@ const Pre = styled.div`
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
     tab-size: 4;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
     hyphens: none;
   }
 
-  pre[class*='language-']::-moz-selection,
-  pre[class*='language-'] ::-moz-selection,
-  code[class*='language-']::-moz-selection,
-  code[class*='language-'] ::-moz-selection {
-    text-shadow: none;
-    background: #383e49;
-  }
-
-  pre[class*='language-']::selection,
-  pre[class*='language-'] ::selection,
-  code[class*='language-']::selection,
-  code[class*='language-'] ::selection {
+  pre::selection,
+  pre ::selection,
+  code::selection,
+  code ::selection {
     text-shadow: none;
     background: #9aa2b1;
   }
 
   @media print {
-    code[class*='language-'],
-    pre[class*='language-'] {
+    code,
+    pre {
       text-shadow: none;
     }
   }
   /* Code blocks */
-  pre[class*='language-'] {
+  pre {
     padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
   }
 
-  :not(pre) > code[class*='language-'],
-  pre[class*='language-'] {
+  :not(pre) > code,
+  pre {
     background: #282c34;
   }
 
   /* Inline code */
-  :not(pre) > code[class*='language-'] {
+  :not(pre) > code {
     padding: 0.1em;
     border-radius: 0.3em;
     white-space: normal;
@@ -158,10 +145,6 @@ const Pre = styled.div`
     width: 3em; /* works for line-numbers below 1000 lines */
     letter-spacing: -1px;
     border-right: 0;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
 
@@ -179,4 +162,4 @@ const Pre = styled.div`
     text-align: right;
   }
 `
-export default Pre
+export default CodeBlockTheme

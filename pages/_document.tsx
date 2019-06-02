@@ -47,16 +47,14 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
             rel="stylesheet"
           />
-          {this.props.styles}
-        </Head>
-        <body className="custom_class">
-          <Main />
-          <NextScript />
-
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-4476856-23"
           />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     )

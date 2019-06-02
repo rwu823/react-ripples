@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Pre = styled.div`
+const CodeBlockTheme = styled.div`
   /**
  * VS theme by Andrew Lock (https://andrewlock.net)
  * Inspired by Visual Studio syntax coloring
@@ -8,8 +8,8 @@ const Pre = styled.div`
 
   @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap');
 
-  code[class*='language-'],
-  pre[class*='language-'] {
+  code,
+  pre {
     color: #393a34;
     font-family: 'Anonymous Pro', monospace;
     direction: ltr;
@@ -19,33 +19,19 @@ const Pre = styled.div`
     word-break: normal;
     font-size: 0.95em;
     line-height: 1.2em;
-
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
     tab-size: 4;
-
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
     hyphens: none;
   }
 
-  pre[class*='language-']::-moz-selection,
-  pre[class*='language-'] ::-moz-selection,
-  code[class*='language-']::-moz-selection,
-  code[class*='language-'] ::-moz-selection {
-    background: #c1def1;
-  }
-
-  pre[class*='language-']::selection,
-  pre[class*='language-'] ::selection,
-  code[class*='language-']::selection,
-  code[class*='language-'] ::selection {
+  pre::selection,
+  pre ::selection,
+  code::selection,
+  code ::selection {
     background: #c1def1;
   }
 
   /* Code blocks */
-  pre[class*='language-'] {
+  pre {
     padding: 1em;
     margin: 0.5em 0;
     overflow: auto;
@@ -54,7 +40,7 @@ const Pre = styled.div`
   }
 
   /* Inline code */
-  :not(pre) > code[class*='language-'] {
+  :not(pre) > code {
     padding: 0.2em;
     padding-top: 1px;
     padding-bottom: 1px;
@@ -175,4 +161,4 @@ const Pre = styled.div`
     );
   }
 `
-export default Pre
+export default CodeBlockTheme
