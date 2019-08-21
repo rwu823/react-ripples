@@ -1,6 +1,6 @@
 {
   "name": "react-ripples",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "The ripple effect. Ripples everywhere",
   "main": "cjs",
   "module": "esm",
