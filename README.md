@@ -1,14 +1,14 @@
 <h1 align="center">
   <img width="200" src="./static/logo.png"/>
   <p>react-ripples</p>
+  <a href="https://circleci.com/gh/rwu823/react-ripples" alt="Build Status">
+    <img src="https://circleci.com/gh/rwu823/react-ripples.svg?style=svg" />
+  </a>
 </h1>
 
 <p align="center">
   <a href="https://www.npmjs.org/package/react-ripples">
     <img src="https://flat.badgen.net/npm/v/react-ripples"/>
-  </a>
-  <a href="https://circleci.com/gh/rwu823/react-ripples" alt="Build Status">
-    <img src="https://flat.badgen.net/circleci/github/rwu823/react-ripples/master" />
   </a>
   <a href="https://codecov.io/github/rwu823/react-ripples">
     <img src="https://flat.badgen.net/codecov/c/github/rwu823/react-ripples"/>
