@@ -66,15 +66,13 @@ export const createRipples = (defaultProps: Partial<RipplesProps> = {}) =>
 
       ev.stopPropagation()
 
-      const {
-        pageX,
-        pageY,
-        currentTarget: { offsetLeft, offsetTop, offsetWidth, offsetHeight },
-      } = ev
+      const { pageX, pageY, currentTarget } = ev
 
-      const left = pageX - offsetLeft
-      const top = pageY - offsetTop
-      const size = Math.max(offsetWidth, offsetHeight)
+      const rect = currentTarget.getBoundingClientRect()
+
+      const left = pageX - (rect.left + window.scrollX)
+      const top = pageY - (rect.top + window.scrollY)
+      const size = Math.max(rect.width, rect.height)
 
       this.setState(
         state => {
