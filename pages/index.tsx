@@ -83,39 +83,28 @@ const App: NextPage<Props> = () => {
         <h1>React Ripples</h1>
         <em>– Ripple effect, ripples everywhere</em>
         <Badges>
-          <a href="https://www.npmjs.org/package/react-ripples" target="_new">
+          <a href="https://www.npmjs.org/package/react-ripples">
             <img
-              alt="npm version"
-              src="https://flat.badgen.net/npm/v/react-ripples"
+              alt="npm"
+              src="https://img.shields.io/npm/v/react-ripples?style=flat-square&logo=npm"
             />
           </a>
-
-          <a href="https://circleci.com/gh/rwu823/react-ripples">
+          <a href="https://codecov.io/github/rwu823/react-ripples">
             <img
-              alt="circle ci"
-              src="https://flat.badgen.net/circleci/github/rwu823/react-ripples/master"
-            />
-          </a>
-
-          <a
-            href="https://codecov.io/github/rwu823/react-ripples"
-            target="_new"
-          >
-            <img
-              alt="code coverage"
-              src="https://flat.badgen.net/codecov/c/github/rwu823/react-ripples"
+              alt="covrage"
+              src="https://img.shields.io/codecov/c/github/rwu823/react-ripples/master?style=flat-square&logo=codecov"
             />
           </a>
           <img
-            alt="minify size"
-            src="https://flat.badgen.net/bundlephobia/minzip/react-ripples"
+            alt="minizip"
+            src="https://img.shields.io/bundlephobia/minzip/react-ripples?style=flat-square&logo=webpack"
           />
         </Badges>
         <div className="star-badge">
           <a href="https://github.com/rwu823/react-ripples" target="_new">
             <img
               alt=""
-              src="https://img.shields.io/github/stars/rwu823/react-ripples.svg?style=social&label=Stars"
+              src="https://img.shields.io/github/stars/rwu823/react-ripples?style=social"
             />
           </a>
         </div>
