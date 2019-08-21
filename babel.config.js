@@ -6,7 +6,7 @@ module.exports = api => {
   api.cache(true)
 
   return {
-    presets: ['next/babel', '@zeit/next-typescript/babel'],
-    plugins: [['styled-components', { displayName: isDev, pure: true }]],
+    presets: ['next/babel'],
+    plugins: [['styled-components', { displayName: isDev }]],
   }
 }

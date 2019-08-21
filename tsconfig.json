@@ -2,10 +2,21 @@
   "extends": "@ts-mono/base/tsconfig",
   "exclude": [
     "node_modules",
-    "out",
+    "out"
   ],
   "compilerOptions": {
     "declaration": false,
     "allowSyntheticDefaultImports": true,
-  }
+    "allowJs": true,
+    "noEmit": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

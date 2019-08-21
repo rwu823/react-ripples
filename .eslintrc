@@ -3,6 +3,5 @@
     "./node_modules/@ts-mono/base/.eslintrc.json"
   ],
   "rules": {
-    "react/prop-types": 0
   }
 }

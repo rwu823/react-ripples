@@ -1,9 +1,22 @@
 import React from 'react'
-import App, { Container, NextAppContext } from 'next/app'
-import GlobalStyles from '../components/GlobalStyles'
+import styled, { css } from 'styled-components'
+import NextApp, { Container, AppContext } from 'next/app'
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }: NextAppContext) {
+import GlobalStyles from '@ts-mono/dev-react/components/GlobalStyles'
+import { mdxRenders } from '@ts-mono/dev-react/components/mdx-renders'
+import GlobalStateProvider from '@ts-mono/dev-react/components/GlobalStateProvider'
+
+const { MDXProvider } = require('@mdx-js/react')
+
+const Main = styled.div`
+  ${(_p: {}) => css`
+    max-width: 800px;
+    margin: 0 auto;
+  `}
+`
+
+class App extends NextApp {
+  static async getInitialProps({ Component, ctx }: AppContext) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -19,10 +32,16 @@ class MyApp extends App {
     return (
       <Container>
         <GlobalStyles />
-        <Component {...pageProps} />
+        <MDXProvider components={mdxRenders}>
+          <Main>
+            <GlobalStateProvider initState={{}}>
+              <Component {...pageProps} />
+            </GlobalStateProvider>
+          </Main>
+        </MDXProvider>
       </Container>
     )
   }
 }
 
-export default MyApp
+export default App

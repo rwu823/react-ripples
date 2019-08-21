@@ -1,18 +1,21 @@
 import React from 'react'
-import { NextFunctionComponent } from 'next'
+import { NextPage } from 'next'
 import Head from 'next/head'
 
 import styled, { css } from 'styled-components'
+import { CodeBlock } from '@ts-mono/dev-react/components/Markdown/'
+import GA from '@ts-mono/dev-react/share/GA'
+
 import Ripples, { createRipples } from '../src'
-import Code from '../components/Code'
-import GA from '../share/GA'
+
+const CodeStyled = styled(CodeBlock)`
+  margin-bottom: 1em;
+`
 
 const MyRipples = createRipples({
   color: 'purple',
   during: 2200,
 })
-
-const ga = new GA('UA-4476856-23')
 
 const Main = styled.div`
   ${(_p: {}) => css`
@@ -60,8 +63,9 @@ const Badges = styled.div`
 `
 type Props = {}
 
-const App: NextFunctionComponent<Props> = () => {
+const App: NextPage<Props> = () => {
   React.useEffect(() => {
+    const ga = new GA('UA-4476856-23')
     ga.pageView()
   }, [])
 
@@ -118,7 +122,8 @@ const App: NextFunctionComponent<Props> = () => {
       </Header>
       <Main>
         <h2>Works with Bootstrap buttons</h2>
-        <Code>{`
+        <CodeStyled
+          src={`
 import Ripples from 'react-ripples'
 
 <Ripples>
@@ -126,7 +131,9 @@ import Ripples from 'react-ripples'
     Primary
   </button>
 </Ripples>
-            `}</Code>
+        `}
+        />
+
         <div className="bootstrap-btns">
           <Ripples>
             <button type="button" className="btn btn-primary">
@@ -165,13 +172,15 @@ import Ripples from 'react-ripples'
         </div>
 
         <h2>Change color and during</h2>
-        <Code>{`
+        <CodeStyled
+          src={`
 <Ripples color="#fff" during={1200}>
   <button type="button" className="btn btn-outline-primary">
     Primary
   </button>
 </Ripples>
-            `}</Code>
+        `}
+        />
 
         <Ripples color="#fff" during={1200}>
           <button type="button" className="btn-outline-primary">
@@ -195,24 +204,23 @@ import Ripples from 'react-ripples'
 
         <h2>Ripples with any shape</h2>
         <p>For example: a radius button</p>
-
-        <Code>
-          {`
+        <CodeStyled
+          src={`
 <div
   style={{
-    display: 'inline-flex',
-    borderRadius: 25,
-    overflow: 'hidden',
-  }}
+  display: 'inline-flex',
+  borderRadius: 25,
+  overflow: 'hidden',
+}}
 >
   <Ripples color={'yellow'}>
-    <button type="button" className="btn btn-primary">
-      Primary
-    </button>
+  <button type="button" className="btn btn-primary">
+    Primary
+  </button>
   </Ripples>
 </div>
-  `}
-        </Code>
+        `}
+        />
         <div
           style={{
             display: 'inline-flex',
@@ -230,16 +238,16 @@ import Ripples from 'react-ripples'
         <h2>API</h2>
         <h3>createRipples([defaultProps])</h3>
         <p>You can easy to extend default props without HOC.</p>
-        <Code>
-          {`
+        <CodeStyled
+          src={`
 import { createRipples } from 'react-ripples'
 
 const MyRipples = createRipples({
   color: 'purple',
   during: 2200,
 })
-            `}
-        </Code>
+        `}
+        />
         <MyRipples>
           <button type="button" className="btn btn-primary">
             Primary

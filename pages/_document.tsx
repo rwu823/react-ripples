@@ -6,11 +6,11 @@ import Document, {
   Head,
   Main,
   NextScript,
-  NextDocumentContext,
+  DocumentContext,
 } from 'next/document'
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: NextDocumentContext) {
+  static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
@@ -21,15 +21,15 @@ class MyDocument extends Document {
         })
 
       const initialProps = await Document.getInitialProps(ctx)
-      return {
-        ...initialProps,
+
+      return Object.assign(initialProps, {
         styles: (
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
         ),
-      }
+      })
     } finally {
       sheet.seal()
     }
@@ -41,10 +41,6 @@ class MyDocument extends Document {
         <Head>
           <link
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
             rel="stylesheet"
           />
           <script
