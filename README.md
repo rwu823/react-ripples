@@ -2,18 +2,18 @@
   <img width="200" src="./static/logo.png"/>
   <p>react-ripples</p>
   <a href="https://circleci.com/gh/rwu823/react-ripples" alt="Build Status">
-    <img src="https://circleci.com/gh/rwu823/react-ripples.svg?style=svg" />
+    <img src="https://img.shields.io/circleci/build/github/rwu823/react-ripples/master?style=for-the-badge&token=abc123def456" />
   </a>
 </h1>
 
 <p align="center">
   <a href="https://www.npmjs.org/package/react-ripples">
-    <img src="https://flat.badgen.net/npm/v/react-ripples"/>
+    <img src="https://img.shields.io/npm/v/react-ripples?style=for-the-badge"/>
   </a>
   <a href="https://codecov.io/github/rwu823/react-ripples">
-    <img src="https://flat.badgen.net/codecov/c/github/rwu823/react-ripples"/>
+    <img src="https://img.shields.io/codecov/c/github/rwu823/react-ripples/master?style=for-the-badge"/>
   </a>
-  <img src="https://flat.badgen.net/bundlephobia/minzip/react-ripples" />
+  <img src="https://img.shields.io/bundlephobia/minzip/react-ripples?style=for-the-badge" />
 </p>
 
 <h4 align="center">
