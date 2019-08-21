@@ -52,7 +52,6 @@ export const createRipples = (defaultProps: Partial<RipplesProps> = {}) =>
           height: 35,
           transform: 'translate(-50%, -50%)',
           pointerEvents: 'none',
-          backgroundColor: props.color,
         },
       }
     }
@@ -62,7 +61,7 @@ export const createRipples = (defaultProps: Partial<RipplesProps> = {}) =>
     }
 
     onClick = (ev: React.MouseEvent<HTMLDivElement>) => {
-      const { during, onClick } = this.props
+      const { during, onClick, color } = this.props
 
       ev.stopPropagation()
 
@@ -84,6 +83,7 @@ export const createRipples = (defaultProps: Partial<RipplesProps> = {}) =>
               opacity: 1,
               transform: 'translate(-50%, -50%)',
               transition: 'initial',
+              backgroundColor: color,
             },
           }
         },
