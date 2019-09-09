@@ -43,10 +43,6 @@ class MyDocument extends Document {
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             rel="stylesheet"
           />
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-4476856-23"
-          />
         </Head>
         <body>
           <Main />

@@ -1,12 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import NextApp, { Container, AppContext } from 'next/app'
+import NextApp, { AppContext } from 'next/app'
 
 import GlobalStyles from '@ts-mono/dev-react/components/GlobalStyles'
 import { mdxRenders } from '@ts-mono/dev-react/components/mdx-renders'
 import GlobalStateProvider from '@ts-mono/dev-react/components/GlobalStateProvider'
+import GA from '@ts-mono/dev-react/share/GA'
 
 const { MDXProvider } = require('@mdx-js/react')
+
+const ga = new GA('UA-4476856-23', { debug: true })
 
 const Main = styled.div`
   ${(_p: {}) => css`
@@ -28,18 +31,17 @@ class App extends NextApp {
 
   render() {
     const { Component, pageProps } = this.props
+    ga.pageView()
 
     return (
-      <Container>
+      <MDXProvider components={mdxRenders}>
         <GlobalStyles />
-        <MDXProvider components={mdxRenders}>
-          <Main>
-            <GlobalStateProvider initState={{}}>
-              <Component {...pageProps} />
-            </GlobalStateProvider>
-          </Main>
-        </MDXProvider>
-      </Container>
+        <Main>
+          <GlobalStateProvider initState={{}}>
+            <Component {...pageProps} />
+          </GlobalStateProvider>
+        </Main>
+      </MDXProvider>
     )
   }
 }

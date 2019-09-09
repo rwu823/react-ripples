@@ -4,7 +4,6 @@ import Head from 'next/head'
 
 import styled, { css } from 'styled-components'
 import { CodeBlock } from '@ts-mono/dev-react/components/Markdown/'
-import GA from '@ts-mono/dev-react/share/GA'
 
 import Ripples, { createRipples } from '../src'
 
@@ -22,6 +21,10 @@ const Main = styled.div`
     padding-bottom: 5em;
     width: 700px;
     margin: 0 auto;
+
+    .mdx-code-block {
+      margin-bottom: 1em;
+    }
 
     h2 {
       margin-top: 2em;
@@ -64,11 +67,6 @@ const Badges = styled.div`
 type Props = {}
 
 const App: NextPage<Props> = () => {
-  React.useEffect(() => {
-    const ga = new GA('UA-4476856-23')
-    ga.pageView()
-  }, [])
-
   return (
     <div>
       <Head>
