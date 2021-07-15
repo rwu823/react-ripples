@@ -80,7 +80,7 @@ static propTypes = {
 }
 
 static defaultProps = {
-  during: 600,
+  during: 700,
   color: 'rgba(0, 0, 0, .3)',
 }
 ```
