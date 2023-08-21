@@ -85,7 +85,8 @@ static defaultProps = {
 }
 ```
 
-| Property | Description                   |
-| -------- | ----------------------------- |
-| during   | The css animate duration [ms] |
-| color    | The ripple's background color |
+| Property | Description                              |
+|----------|------------------------------------------|
+| disabled | Determines if the ripple will be played  |
+| during   | The css animate duration [ms]            |
+| color    | The ripple's background color            |
